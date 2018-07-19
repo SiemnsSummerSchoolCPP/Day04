@@ -4,7 +4,7 @@
 #include <exception>
 
 const int nbPadding = 10;
-const int nbPrecision = 3;
+const int nbPrecision = 7;
 
 double* requestMatrix(int& width, int& height)
 {
@@ -24,8 +24,13 @@ double* requestMatrix(int& width, int& height)
 	matrix = new double[width * height];
 
 	for (int i = 0; i < width * height; i++)
-		std::cin >> matrix[i];
-
+    {
+		if (!(std::cin >> matrix[i]))
+        {
+            std::cerr << "Unexpected EOF." << std::endl;
+            throw EXIT_FAILURE;
+        }
+    }
 	std::cout << std::endl;
 	return matrix;
 }
@@ -46,7 +51,7 @@ static void printColumnIndexes(
 	std::cout << std::setw(padding) << "";
 	for (int j = 0; j < matrixWidth; j++)
 	{
-		printSqrBracedInt(o, j, (j != 0 ? padding + 1 : 0));
+		printSqrBracedInt(o, j, padding);
 	}
 	o << std::endl;
 }
@@ -56,20 +61,20 @@ void printMatrix(
 	const int width,
 	const int height)
 {
-	printColumnIndexes(std::cout, width, nbPadding);	
-	
-	for (int i = 0; i < height; i++)
-	{
-		printSqrBracedInt(std::cout, i, -nbPadding);
-		for (int j = 0; j < width; j++)
-		{
-			std::cout
-				<< std::setw(nbPadding)
-			  	<< std::setprecision(nbPrecision)
-		  		<< matrix[i * height + j];
-		}
-		std::cout << std::endl;
-	}
+	printColumnIndexes(std::cout, width, nbPadding);
+    for (int i = 0; i < height; i++)
+    {
+        printSqrBracedInt(std::cout, i, nbPadding);
+        for (int j = 0; j < width; j++)
+        {
+            auto index = i * width + j;
+            std::cout
+                << std::setw(nbPadding)
+                << std::setprecision(nbPrecision)
+                << matrix[index];
+        }
+        std::cout << std::endl;
+    }
 }
 
 int main()
