@@ -50,6 +50,7 @@ FUNCTION(GET_FILES_GROUPED dir return_result)
 		LIST(APPEND srcs ${files})
 	ENDFOREACH(loop_dir)
 
+	INCLUDE_DIRECTORIES(${DIRS})
 	SET(${return_result} "${srcs}" PARENT_SCOPE)
 ENDFUNCTION(GET_FILES_GROUPED)
 
