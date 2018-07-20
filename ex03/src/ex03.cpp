@@ -39,8 +39,8 @@ static void printSqrBracedInt(std::ostream& o, int nb, int padding)
 {
 	std::stringstream ss;
 
-	ss << "[" << nb << "]";
-	o << std::setw(padding) << ss.str();
+    ss << "[" << nb << "]";
+    o << std::setw(padding) << ss.str();
 }
 
 static void printColumnIndexes(
