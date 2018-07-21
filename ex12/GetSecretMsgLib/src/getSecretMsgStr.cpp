@@ -7,7 +7,8 @@ std::string getSecretMsgStr(
 {
 	char* charArray;
 
-	charArray = new char[msgLen];
+	charArray = new char[msgLen + 1];
+	charArray[msgLen] = '\0';
 	for (int i = 0; i < msgLen; i++)
 	{
 		inputFile.seekg(offsets[i], std::ios::beg);

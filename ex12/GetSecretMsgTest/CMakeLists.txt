@@ -91,3 +91,6 @@ set_target_properties(${PROJ_NAME} PROPERTIES
 
 # Flags
 set(CMAKE_CXX_FLAGS "-g")
+Set(CMAKE_CXX_FLAGS "-Wall")
+Set(CMAKE_CXX_FLAGS "-Wextra")
+Set(CMAKE_CXX_FLAGS "-Werror")
