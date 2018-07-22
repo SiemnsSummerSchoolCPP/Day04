@@ -1,6 +1,6 @@
 #include "getSecretMsgStr.h"
 
-OffsetType* getOffsets(const size_t msgLen, std::fstream& inputFile)
+OffsetType* getOffsets(const size_t msgLen, std::ifstream& inputFile)
 {
 	OffsetType* result;
 

@@ -1,6 +1,6 @@
 #include "getSecretMsgStr.h"
 
-uint8_t getFirstByte(std::fstream& inputFile)
+uint8_t getFirstByte(std::ifstream& inputFile)
 {
 	uint8_t firstByte;
 

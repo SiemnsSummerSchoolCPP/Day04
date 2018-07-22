@@ -3,7 +3,7 @@
 std::string getSecretMsgStr(
 	const size_t msgLen,
 	const OffsetType* offsets,
-	std::fstream& inputFile)
+	std::ifstream& inputFile)
 {
 	char* charArray;
 

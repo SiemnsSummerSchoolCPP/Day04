@@ -7,13 +7,13 @@
 
 using OffsetType = uint16_t;
 
-size_t		getFileSize(std::fstream& inputFile);
-uint8_t		getFirstByte(std::fstream& inputFile);
-size_t		getMessageLength(std::fstream& inputFile);
-OffsetType*	getOffsets(const size_t msgLen, std::fstream& inputFile);
+size_t		getFileSize(std::ifstream& inputFile);
+uint8_t		getFirstByte(std::ifstream& inputFile);
+size_t		getMessageLength(std::ifstream& inputFile);
+OffsetType*	getOffsets(const size_t msgLen, std::ifstream& inputFile);
 std::string	getSecretMsgStr(
 				size_t msgLen,
 				const OffsetType* offsets,
-				std::fstream& inputFile);
+				std::ifstream& inputFile);
 
 #endif

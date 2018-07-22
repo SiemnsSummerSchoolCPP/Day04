@@ -2,9 +2,7 @@
 
 std::string getSecretMsg(const char* filePath)
 {
-	auto inputFile = std::fstream(
-		filePath,
-		std::ios::in | std::ios::binary | std::ios::ate);
+	auto inputFile = std::ifstream(filePath, std::ios::binary);
 
     if (!inputFile.is_open())
     {
