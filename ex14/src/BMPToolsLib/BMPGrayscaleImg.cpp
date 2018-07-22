@@ -24,7 +24,7 @@ BMPGrayscaleImg::BMPGrayscaleImg(
 	assignConstants();
 
 	infoHeader.width = width;
-	infoHeader.height = width;
+	infoHeader.height = height;
 	this->pixels = pixels;
 
 	header.dataOffset =
@@ -104,7 +104,7 @@ static inline void addPadding(std::ostream& o, uint padding)
 		return;
 
 	uint8_t buf = 0;
-	for (int i = 0; i < padding; i++)
+	for (uint i = 0; i < padding; i++)
 	{
 		o.write((char*)&buf, sizeof(buf));
 	}

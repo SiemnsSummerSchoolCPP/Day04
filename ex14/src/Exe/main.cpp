@@ -23,7 +23,7 @@ void convertMINSTImages(
 	const std::string resultDir,
 	size_t maxNbOfImgs)
 {
-	for (size_t i = 0; i < maxNbOfImgs && i < imgDataset.getNbOfImages(); i++)
+	for (int i = 0; i < (int)maxNbOfImgs && i < imgDataset.getNbOfImages(); i++)
 	{
 		const auto label = labelDataSet.getLabels()[i];
 		const auto flipedImg =

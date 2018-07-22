@@ -47,7 +47,7 @@ MinstImgDataSet::~MinstImgDataSet()
 {
 	if (images != nullptr)
 	{
-		for (size_t i = 0; i < nbOfImages; i++)
+		for (int i = 0; i < nbOfImages; i++)
 			delete[] images[i];
 			
 		delete[] images;
